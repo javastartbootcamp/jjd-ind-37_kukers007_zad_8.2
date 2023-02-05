@@ -5,18 +5,21 @@ public class Ticket {
     private Adress adress;
     private double price;
     private String type;
-    static int ticketNo;
+    private static int ticketNo = 0;
+    private int countTicket;
 
     public Ticket(String event, Adress adress, double price, String type) {
+        ticketNo++;
         this.event = event;
         this.adress = adress;
         this.price = price;
         this.type = type;
-        ticketNo++;
+        this.countTicket = ticketNo;
+
     }
 
     public Ticket() {
-        ticketNo++;
+        countTicket++;
     }
 
     public String getEvent() {
@@ -47,6 +50,18 @@ public class Ticket {
         return ticketNo;
     }
 
+    public static void setTicketNo(int ticketNo) {
+        Ticket.ticketNo = ticketNo;
+    }
+
+    public int getCountTicket() {
+        return countTicket;
+    }
+
+    public void setCountTicket(int countTicket) {
+        this.countTicket = countTicket;
+    }
+
     public String getType() {
         return type;
     }
@@ -58,7 +73,7 @@ public class Ticket {
     void printInfo() {
         System.out.println("Event type: " + event);
         System.out.println("Ticket type: " + type);
-        System.out.println("Your ticket ID: " + ticketNo);
+        System.out.println("Your ticket ID: " + Ticket.ticketNo);
         System.out.println("Event location:");
         System.out.println("Country: " + adress.getCountry());
         System.out.println("City: " + adress.getCity());

@@ -9,19 +9,12 @@ public class Adress {
     private String zipCode;
 
     public Adress(String country, String city, String street, int streetNo, int houseNr, String zipCode) {
-        this.country = country;
-        this.city = city;
-        this.street = street;
-        this.streetNo = streetNo;
+        this(country, city, street, streetNo, zipCode);
         this.houseNr = houseNr;
-        this.zipCode = zipCode;
     }
 
     public Adress(String country, String city, String street, int streetNo, String zipCode) {
-        this.country = country;
-        this.city = city;
-        this.street = street;
-        this.streetNo = streetNo;
+        this(country, city, street, streetNo);
         this.zipCode = zipCode;
     }
 

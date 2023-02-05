@@ -3,35 +3,20 @@ package pl.javastart.task;
 import java.util.Objects;
 
 public class CalculatedTicketPrice {
-    static final double SHIPPING_COST = 5;
-    static final double REGULAR_DISCOUNT_FOR_ONLINE = 0.95;
-    static final double DISCOUNT_FIVE_PROCENT = 0.05;
-    static final double NORMAL_DISCOUNT = 0.97;
-    double normalPrice;
-    double standardTicketPrice;
-    double onlineTicketPrice;
-    double giftTicketPrice;
 
     double calculatedTicketPrice(Ticket ticket) {
-        normalPrice = ticket.getPrice();
-
+        double shippingCost = 5;
+        double discountForOnline = 0.95;
+        double discountFiveProcent = 0.05;
+        double discount = 0.97;
+        double ticketPrice = ticket.getPrice();
         if (Objects.equals(ticket.getType(), "standard")) {
-            standardTicketPrice = normalPrice * NORMAL_DISCOUNT + SHIPPING_COST;
-            System.out.println("Standardticket price for You: " + (int) standardTicketPrice);
-            return (int) standardTicketPrice;
-
+            return (int) ticketPrice * discount + shippingCost;
         } else if (Objects.equals(ticket.getType(), "online")) {
-            onlineTicketPrice = normalPrice * REGULAR_DISCOUNT_FOR_ONLINE;
-            System.out.println("Onlineticket price for You: " + (int) onlineTicketPrice);
-            return (int) onlineTicketPrice;
-
+            return (int) ticketPrice * discountForOnline;
         } else if (Objects.equals(ticket.getType(), "gift")) {
-            giftTicketPrice = standardTicketPrice + (normalPrice * DISCOUNT_FIVE_PROCENT);
-            System.out.println("Giftticket price for You: " + (int) giftTicketPrice);
-            return (int) giftTicketPrice;
+            return (int) ticketPrice + (ticketPrice * discountFiveProcent);
         }
-
-        System.out.println("Your choose a wrong ticket type.");
-        return 0;
+        return ticketPrice;
     }
 }

@@ -11,21 +11,21 @@ public class Main {
 
         Ticket ticket1 = new Ticket("Soccer Game", adress1, 80, "standard");
         ticket1.printInfo();
-        System.out.println(calc1.calculatedTicketPrice(ticket1));
+        System.out.println("Price for ticket: " + calc1.calculatedTicketPrice(ticket1));
         System.out.println("------");
 
         Ticket ticket2 = new Ticket("Concert", adress2, 80, "online");
         ticket2.printInfo();
-        System.out.println(calc1.calculatedTicketPrice(ticket2));
+        System.out.println("Price for ticket: " + calc1.calculatedTicketPrice(ticket2));
         System.out.println("------");
 
         Ticket ticket3 = new Ticket("Bier trinken und würst essen", adress3, 80, "gift");
         ticket3.printInfo();
-        System.out.println(calc1.calculatedTicketPrice(ticket3));
+        System.out.println("Price for ticket: " + calc1.calculatedTicketPrice(ticket3));
         System.out.println("------");
 
-        Ticket ticket4 = TicketCreate.create();
-        ticket4.printInfo();
-        System.out.println(calc1.calculatedTicketPrice(ticket4));
+        Ticket ticket = TicketCreate.create();
+        ticket.printInfo();
+        System.out.println(calc1.calculatedTicketPrice(ticket));
     }
 }
