@@ -9,17 +9,17 @@ public class Main {
         Adress adress2 = new Adress("Japan", "Tokyo", "Shinbuz", 222, "007-7776");
         Adress adress3 = new Adress("Germany", "Nümberg", "RomantischeStr.", 54, "98-999");
 
-        Ticket ticket1 = new Ticket("Soccer Game", adress1, 80, "standard");
+        Ticket ticket1 = new Ticket("Soccer Game", adress1, 80, "standard", 0.1);
         ticket1.printInfo();
         System.out.println("Price for ticket: " + calc1.calculatedTicketPrice(ticket1));
         System.out.println("------");
 
-        Ticket ticket2 = new Ticket("Concert", adress2, 80, "online");
+        Ticket ticket2 = new Ticket("Concert", adress2, 80, "online", 0.1);
         ticket2.printInfo();
         System.out.println("Price for ticket: " + calc1.calculatedTicketPrice(ticket2));
         System.out.println("------");
 
-        Ticket ticket3 = new Ticket("Bier trinken und würst essen", adress3, 80, "gift");
+        Ticket ticket3 = new Ticket("Bier trinken und würst essen", adress3, 80, "gift", 0.1);
         ticket3.printInfo();
         System.out.println("Price for ticket: " + calc1.calculatedTicketPrice(ticket3));
         System.out.println("------");

@@ -3,19 +3,19 @@ package pl.javastart.task;
 import java.util.Objects;
 
 public class CalculatedTicketPrice {
+    static final double SHIPPING_COST = 5;
+    static final double DISCOUNT_FIVE_PROCENT = 0.05;
 
     double calculatedTicketPrice(Ticket ticket) {
-        double shippingCost = 5;
-        double discountForOnline = 0.95;
-        double discountFiveProcent = 0.05;
-        double discount = 0.97;
+        double discount = ticket.getDiscount();
         double ticketPrice = ticket.getPrice();
+        double regularPrice = ticketPrice - ticketPrice * discount;
         if (Objects.equals(ticket.getType(), "standard")) {
-            return (int) ticketPrice * discount + shippingCost;
+            return  regularPrice + SHIPPING_COST;
         } else if (Objects.equals(ticket.getType(), "online")) {
-            return (int) ticketPrice * discountForOnline;
+            return  regularPrice;
         } else if (Objects.equals(ticket.getType(), "gift")) {
-            return (int) ticketPrice + (ticketPrice * discountFiveProcent);
+            return regularPrice + SHIPPING_COST + (regularPrice * DISCOUNT_FIVE_PROCENT);
         }
         return ticketPrice;
     }

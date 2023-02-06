@@ -21,10 +21,13 @@ public class TicketCreate {
         adress.setStreetNo(scanner.nextInt());
         System.out.println("Enter ticket price");
         ticket.setPrice(scanner.nextInt());
+        System.out.println("Enter ticket discount");
+        ticket.setDiscount(scanner.nextDouble());
         scanner.nextLine();
         System.out.println("Podaj typ biletu:");
         System.out.println("online / standard / gift");
         ticket.setType(scanner.nextLine());
-        return new Ticket(ticket.getEvent(), adress, ticket.getPrice(), ticket.getType());
+        ticket.setAdress(adress);
+        return ticket;
     }
 }
