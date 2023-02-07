@@ -25,7 +25,7 @@ public class TicketCreate {
         ticket.setDiscount(scanner.nextDouble());
         scanner.nextLine();
         System.out.println("Podaj typ biletu:");
-        System.out.println("online / standard / gift");
+        System.out.println(Ticket.TYPE_ONLINE + " " + Ticket.TYPE_GIFT + " " + Ticket.TYPE_STANDARD);
         ticket.setType(scanner.nextLine());
         ticket.setAdress(adress);
         return ticket;
